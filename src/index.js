@@ -16,6 +16,9 @@ app.engine('handlebars', handlebars.engine())
 app.set('view engine', 'handlebars')
 app.set('views', path.join(__dirname, 'resources', 'views'))
 
+app.use(express.json())
+app.use(express.urlencoded())
+
 route(app)
 
 app.listen(port, () => {
